@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Psychic Game</title>
+    <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+
+</head>
+  <body>
+    <h1> The Psychic Game <h1>
+         <h2>Guess what number I'm thinking of...</h2>
+
+    <p>Wins:</p>
+      <br>
+    <p>Losses:</p>
+      <br>
+    <p>Guesses Left:</p>
+      <br>
+    <p>Your Guesses so far:</p>
+
+<script type="text/javascript">
+// Taking the tallies and displaying them in HTML
+    var html = 
+    "<p>wins: " + 
+    wins + 
+    "</p>" +
+    "<p>losses: " + 
+    losses + 
+    "</p>";
+
+//variables
+var randomLetter;
+var userGuess;
+var wins=0;
+var losses=0;
+var guessesLeft=9;
+
+// Set up your functions
+var resetGame = function() {
+  // Resets guessesLeft
+  // Picks a new letter
+};
+
+var pickLetter = function() {
+    var letter = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+    var i = Math.floor(Math.random()*(letter.length));
+    randomLetter= letter[i];
+    console.log(randomLetter);
+}
+ // Waits for user input
+
+var compareLetter = function() {
+// Waits for user input
+  document.addEventListener('keypress', function(event) {    
+    if(event.which>=97 && event.which <=122) {       
+      // console.log(String.fromCharCode(event.which)); 
+      userGuess=String.fromCharCode(event.which);
+      console.log(userGuess);
+      if(userGuess==randomLetter) {
+        wins++;
+        console.log("you won "+wins);
+      } 
+      else {
+        guessesLeft--;
+        console.log("guesses left "+guessesLeft);
+      } 
+
+      
+    } else{
+      //add invalid key res// if(event.which is not between 97 and 122)
+      }
+
+
+}); 
+
+  // Waits for user input
+
+    // Checks if game is over
+
+    // Checks if input is a letter
+
+      // Sets userGuess
+
+      // Appends input to HTML element content
+
+      // Checks if results match
+        // Checks if last guess
+};
+
+// Run the game
+window.onload=function(){
+  pickLetter();
+  compareLetter();
+}
+
+
+// Note: Initialize guessesLeft = 0, so game resets upon start
+
+</script> 
+</body>
+</html>
+
+<!-- need to reset game, 
+need to write to the page -->
+
+
